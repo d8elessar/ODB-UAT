@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function timestamp() {
+        var response = document.getElementById("g-recaptcha-response");
+        if (response == null || response.value.trim() == "") {
+          var elems = JSON.parse(
+            document.getElementsByName("captcha_settings")[0].value
+          );
+          elems["ts"] = JSON.stringify(new Date().getTime());
+          document.getElementsByName("captcha_settings")[0].value =
+            JSON.stringify(elems);
+        }
+      }
+      setInterval(timestamp, 500);
+    </script>
+  </head>
+
+  <body>
+    <!-- Add your site or application content here -->
+    <p>ODB UAT Web Form Salesforce Example</p>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <form
+      action="https://online-druckgmbhcokg--uat.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="captcha_settings"
+        value='{"keyname":"DemoOnlineDruckDev2","fallback":"true","orgId":"00D5r0000008gcf","ts":""}'
+      />
+      <input type="hidden" name="orgid" value="00D5r0000008gcf" />
+      <input type="hidden" name="retURL" value="http://danke" />
+
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+      <!--  these lines if you wish to test in debug mode.                          -->
+      <!--  <input type="hidden" name="debug" value=1>                              -->
+      <!--  <input type="hidden" name="debugEmail" value="avalerio@annscom.de">     -->
+      <!--  ----------------------------------------------------------------------  -->
+
+      <label for="name">Kontaktname</label
+      ><input
+        id="name"
+        maxlength="80"
+        name="name"
+        size="20"
+        type="text"
+        required
+      /><br />
+
+      <label for="email">E-Mail</label
+      ><input
+        id="email"
+        maxlength="80"
+        name="email"
+        size="20"
+        type="text"
+      /><br />
+
+      <label for="subject">Thema</label>
+      <select id="subject" name="subject" required>
+        <option value="">– Ohne –</option>
+        <option value="Hilfe beim bestellen">Hilfe beim bestellen</option>
+        <option value="Aktueller Status">Aktueller Status</option>
+        <option value="Frage Druckdaten">Frage Druckdaten</option>
+        <option value="Hilfe erstellen Druckdaten">
+          Hilfe erstellen Druckdaten
+        </option>
+        <option value="Aktueller Status Zahlung">
+          Aktueller Status Zahlung
+        </option>
+        <option value="Reklamation">Reklamation</option>
+        <option value="Lieferadresse ändern">Lieferadresse ändern</option>
+        <option value="Rechnungsadresse aktualisieren">
+          Rechnungsadresse aktualisieren
+        </option>
+        <option value="DSVGO">DSVGO</option>
+        <option value="Verarbeitungsvertrag DSVGO">
+          Verarbeitungsvertrag DSVGO
+        </option>
+        <option value="Individuelles Angebot">Individuelles Angebot</option>
+        <option value="Portalzugang">Portalzugang</option>
+        <option value="Sonstiges">Sonstiges</option></select
+      ><br />
+
+      <label for="description">Beschreibung</label
+      ><textarea name="description"></textarea><br />
+
+      Bestellnummer:<input
+        id="00N5r000001tS18"
+        maxlength="7"
+        name="00N5r000001tS18"
+        size="20"
+        type="text"
+      /><br />
+
+      Kundennummer:<input
+        id="00N5r000001sMS3"
+        maxlength="30"
+        name="00N5r000001sMS3"
+        size="20"
+        type="text"
+      /><br />
+
+      Ticketnummer:<input
+        id="00N5r000001sMSF"
+        maxlength="30"
+        name="00N5r000001sMSF"
+        size="20"
+        type="text"
+      /><br />
+
+      <div
+        class="g-recaptcha"
+        data-sitekey="6Lc1A8QbAAAAAOLkNhO9TuQRuHBv7EGL2bhe7TVv"
+      ></div>
+      <br />
+      <input type="submit" name="submit" />
+    </form>
+  </body>
+</html>
