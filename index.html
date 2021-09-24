@@ -11,7 +11,11 @@
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
 
-    <link rel="manifest" href="site.webmanifest" />
+    <link
+      rel="manifest"
+      href="site.webmanifest"
+      crossorigin="use-credentials"
+    />
     <link rel="apple-touch-icon" href="icon.png" />
     <!-- Place favicon.ico in the root directory -->
 
@@ -162,6 +166,32 @@
       <input type="submit" name="submit" />
     </form>
 
+    <a
+      id="liveagent_button_online_5735r0000008PCD"
+      href="javascript://Chat"
+      style="display: none"
+      onclick="liveagent.startChat('5735r0000008PCD')"
+      ><!-- Online Chat Content --></a
+    >
+    <div id="liveagent_button_offline_5735r0000008PCD" style="display: none">
+      <!-- Offline Chat Content -->
+    </div>
+    <script type="text/javascript">
+      if (!window._laq) {
+        window._laq = [];
+      }
+      window._laq.push(function () {
+        liveagent.showWhenOnline(
+          "5735r0000008PCD",
+          document.getElementById("liveagent_button_online_5735r0000008PCD")
+        );
+        liveagent.showWhenOffline(
+          "5735r0000008PCD",
+          document.getElementById("liveagent_button_offline_5735r0000008PCD")
+        );
+      });
+    </script>
+
     <style type="text/css">
       .embeddedServiceHelpButton .helpButton .uiButton {
         background-color: #005290;
@@ -231,6 +261,17 @@
       } else {
         initESW("https://service.force.com");
       }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://c.la3-c1cs-fra.salesforceliveagent.com/content/g/js/52.0/deployment.js"
+    ></script>
+    <script type="text/javascript">
+      liveagent.init(
+        "https://d.la3-c1cs-fra.salesforceliveagent.com/chat",
+        "5725r0000008OOX",
+        "00D5r0000008gcf"
+      );
     </script>
   </body>
 </html>
