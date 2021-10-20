@@ -67,6 +67,7 @@
     <form
       action="https://online-druckgmbhcokg--uat.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
       method="POST"
+      onsubmit="return validateForm()"
     >
       <input
         type="hidden"
@@ -100,6 +101,7 @@
         name="email"
         size="20"
         type="text"
+        required
       /><br />
 
       <label for="subject">Thema</label>
@@ -118,7 +120,7 @@
       ><br />
 
       <label for="description">Beschreibung</label
-      ><textarea name="description"></textarea><br />
+      ><textarea name="description" required></textarea><br />
 
       Auftragsnummer:<input
         id="00N5r000001tS18"
@@ -126,6 +128,7 @@
         name="00N5r000001tS18"
         size="20"
         type="text"
+        class="auftragsnummer"
       /><br />
 
       Kundennummer:<input
@@ -190,6 +193,19 @@
         outline: 1px solid #005290;
       }
     </style>
+
+    <script type="text/javascript">
+      function validateForm() {
+        let x = document.querySelector("#subject").value;
+        let y = document.querySelector(".auftragsnummer").value;
+        if (x == "vorhandene Bestellung" && !y) {
+          alert(
+            "Auftragsnummer wird benötigt, wenn 'vorhandene Bestellung' ausgewählt ist."
+          );
+          return false;
+        }
+      }
+    </script>
 
     <script
       type="text/javascript"
